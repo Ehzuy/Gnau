@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="NiuNiu">
+  <meta name="theme-color" content="#d4a017">
+  <meta name="description" content="Niu Niu (牛牛) card game hand calculator with 3↔6 swap and double pair detection.">
+  <title>Niu Niu Calculator</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-icon">🐂</div>
+      <h1>Niu Niu</h1>
+      <p class="subtitle">牛牛 Calculator</p>
+    </header>
+
+    <!-- Selected Hand -->
+    <section class="hand-section">
+      <div class="hand-label">Your Hand <span class="hand-count" id="handCount">0 / 5</span></div>
+      <div class="hand-slots" id="handSlots">
+        <div class="hand-slot empty" data-index="0"><span class="slot-placeholder">+</span></div>
+        <div class="hand-slot empty" data-index="1"><span class="slot-placeholder">+</span></div>
+        <div class="hand-slot empty" data-index="2"><span class="slot-placeholder">+</span></div>
+        <div class="hand-slot empty" data-index="3"><span class="slot-placeholder">+</span></div>
+        <div class="hand-slot empty" data-index="4"><span class="slot-placeholder">+</span></div>
+      </div>
+    </section>
+
+    <!-- Card Picker -->
+    <section class="picker-section">
+      <div class="picker-label">Tap to add cards</div>
+      <div class="card-grid" id="cardGrid">
+        <button class="card-btn" data-value="1" data-label="A">A</button>
+        <button class="card-btn" data-value="2" data-label="2">2</button>
+        <button class="card-btn" data-value="3" data-label="3">3</button>
+        <button class="card-btn" data-value="4" data-label="4">4</button>
+        <button class="card-btn" data-value="5" data-label="5">5</button>
+        <button class="card-btn" data-value="6" data-label="6">6</button>
+        <button class="card-btn" data-value="7" data-label="7">7</button>
+        <button class="card-btn" data-value="8" data-label="8">8</button>
+        <button class="card-btn" data-value="9" data-label="9">9</button>
+        <button class="card-btn face" data-value="10" data-label="10">10</button>
+        <button class="card-btn face" data-value="10" data-label="J">J</button>
+        <button class="card-btn face" data-value="10" data-label="Q">Q</button>
+        <button class="card-btn face" data-value="10" data-label="K">K</button>
+      </div>
+    </section>
+
+    <!-- Action Buttons -->
+    <section class="action-section">
+      <button class="btn-calculate" id="btnCalculate" disabled>Calculate</button>
+      <button class="btn-reset" id="btnReset">Clear</button>
+    </section>
+
+    <!-- Results -->
+    <section class="result-section hidden" id="resultSection">
+      <div class="result-card" id="resultCard">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- Rules footer -->
+    <footer class="rules-footer">
+      <div class="rule-badge">3 ↔ 6</div>
+      <div class="rule-badge">💎 Double = 2×</div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
